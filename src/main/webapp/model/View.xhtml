@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewModelTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewModelLabel_codCnes}"/>
+                    <h:outputText value="#{modelController.selected.codCnes}" title="#{bundle.ViewModelTitle_codCnes}"/>
+                    <h:outputText value="#{bundle.ViewModelLabel_codMunic}"/>
+                    <h:outputText value="#{modelController.selected.codMunic}" title="#{bundle.ViewModelTitle_codMunic}"/>
+                    <h:outputText value="#{bundle.ViewModelLabel_dscAdapDeficFisicIdosos}"/>
+                    <h:outputText value="#{modelController.selected.dscAdapDeficFisicIdosos}" title="#{bundle.ViewModelTitle_dscAdapDeficFisicIdosos}"/>
+                    <h:outputText value="#{bundle.ViewModelLabel_dscBairro}"/>
+                    <h:outputText value="#{modelController.selected.dscBairro}" title="#{bundle.ViewModelTitle_dscBairro}"/>
+                    <h:outputText value="#{bundle.ViewModelLabel_dscCidade}"/>
+                    <h:outputText value="#{modelController.selected.dscCidade}" title="#{bundle.ViewModelTitle_dscCidade}"/>
+                    <h:outputText value="#{bundle.ViewModelLabel_dscEndereco}"/>
+                    <h:outputText value="#{modelController.selected.dscEndereco}" title="#{bundle.ViewModelTitle_dscEndereco}"/>
+                    <h:outputText value="#{bundle.ViewModelLabel_dscEquipamentos}"/>
+                    <h:outputText value="#{modelController.selected.dscEquipamentos}" title="#{bundle.ViewModelTitle_dscEquipamentos}"/>
+                    <h:outputText value="#{bundle.ViewModelLabel_dscEstrutFisicAmbiencia}"/>
+                    <h:outputText value="#{modelController.selected.dscEstrutFisicAmbiencia}" title="#{bundle.ViewModelTitle_dscEstrutFisicAmbiencia}"/>
+                    <h:outputText value="#{bundle.ViewModelLabel_dscMedicamentos}"/>
+                    <h:outputText value="#{modelController.selected.dscMedicamentos}" title="#{bundle.ViewModelTitle_dscMedicamentos}"/>
+                    <h:outputText value="#{bundle.ViewModelLabel_dscTelefone}"/>
+                    <h:outputText value="#{modelController.selected.dscTelefone}" title="#{bundle.ViewModelTitle_dscTelefone}"/>
+                    <h:outputText value="#{bundle.ViewModelLabel_nomEstab}"/>
+                    <h:outputText value="#{modelController.selected.nomEstab}" title="#{bundle.ViewModelTitle_nomEstab}"/>
+                    <h:outputText value="#{bundle.ViewModelLabel_vlrLatitude}"/>
+                    <h:outputText value="#{modelController.selected.vlrLatitude}" title="#{bundle.ViewModelTitle_vlrLatitude}"/>
+                    <h:outputText value="#{bundle.ViewModelLabel_vlrLongitude}"/>
+                    <h:outputText value="#{modelController.selected.vlrLongitude}" title="#{bundle.ViewModelTitle_vlrLongitude}"/>
+                </h:panelGrid>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListModelTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListModelEmpty}" rendered="#{modelController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{modelController.items.rowCount > 0}">
+                    <h:outputText value="#{modelController.pagination.pageFirstItem + 1}..#{modelController.pagination.pageLastItem + 1}/#{modelController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{modelController.previous}" value="#{bundle.Previous} #{modelController.pagination.pageSize}" rendered="#{modelController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{modelController.next}" value="#{bundle.Next} #{modelController.pagination.pageSize}" rendered="#{modelController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{modelController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_codCnes}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codCnes}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_codMunic}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.codMunic}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_dscAdapDeficFisicIdosos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscAdapDeficFisicIdosos}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_dscBairro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscBairro}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_dscCidade}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscCidade}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_dscEndereco}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscEndereco}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_dscEquipamentos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscEquipamentos}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_dscEstrutFisicAmbiencia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscEstrutFisicAmbiencia}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_dscMedicamentos}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscMedicamentos}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_dscTelefone}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dscTelefone}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_nomEstab}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nomEstab}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_vlrLatitude}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.vlrLatitude}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListModelTitle_vlrLongitude}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.vlrLongitude}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{modelController.prepareView}" value="#{bundle.ListModelViewLink}"/>
+                            <h:outputText value=" "/>
+                           <!-- <h:commandLink action="" value=""/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="" value=""/> -->
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <br />
+                <h:link outcome="/index.jsp" value="Início"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
