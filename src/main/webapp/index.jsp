@@ -34,7 +34,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"> <a class="nav-link active" href="faces/login.xhtml"><i></i>Feedback<br></a> </li>
             <li class="nav-item"> <a class="nav-link active" href="faces/user/Create.xhtml"><i></i>Registre-se<br></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="faces/model/List.xhtml">Pesquisar</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="faces/pesquisa/pesquisa.xhtml">Pesquisar</a> </li>
           <li class="nav-item"> <a class="nav-link" href="faces/jsf/ComMarcacao.xhtml">Mapa</a> </li>
         </ul>
       </div>

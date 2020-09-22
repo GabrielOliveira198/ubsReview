@@ -11,6 +11,6 @@
 		<property name="hibernate.hbm2ddl.auto">update</property>
                 
                 <mapping class="Sismob.Sismob" />
-
+                <mapping class="Model.Model" />
     </session-factory>
 </hibernate-configuration>
